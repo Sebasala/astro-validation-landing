@@ -8,16 +8,22 @@ export const siteConfig = {
   title: "Astro Validation Landing - Validate Your Product Idea",
   description:
     "Build beautiful, high-converting landing pages to test your product idea, gather early interest, and validate market demand—without writing code.",
-  image: "/og-image.png"
-};
-
-export const header = {
-  logo: "AVL",
-  navLinks: [
+  image: "/og-image.png",
+  quickLinks: [
     { label: "Features", href: "#features" },
     { label: "How It Works", href: "#how-it-works" },
     { label: "FAQ", href: "#faq" }
   ],
+  legalLinks: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Contact", href: "mailto:hello@astro-validation-landing.com" }
+  ]
+};
+
+export const header = {
+  name: siteConfig.name,
+  navLinks: siteConfig.quickLinks,
   cta: {
     label: "Get Early Access",
     href: "#cta"
@@ -201,27 +207,14 @@ export const faq = {
 };
 
 export const footer = {
-  brand: {
-    name: "Astro Validation Landing",
-    description:
-      "Build beautiful, high-converting landing pages to validate your product idea."
-  },
   sections: {
     quickLinks: {
       title: "Quick Links",
-      links: [
-        { label: "Features", href: "#features" },
-        { label: "How It Works", href: "#how-it-works" },
-        { label: "FAQ", href: "#faq" }
-      ]
+      links: siteConfig.quickLinks
     },
     legal: {
       title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/privacy" },
-        { label: "Terms of Service", href: "/terms" },
-        { label: "Contact", href: "mailto:hello@astro-validation-landing.com" }
-      ]
+      links: siteConfig.legalLinks
     }
   },
   copyright: `© ${new Date().getFullYear()} Astro Validation Landing. All rights reserved.`,

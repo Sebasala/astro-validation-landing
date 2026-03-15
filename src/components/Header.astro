@@ -1,12 +1,13 @@
 ---
 import Button from "./starwind/button/Button.astro";
 import Logo from "./Logo.astro";
-import { header, siteConfig } from "@/lib/content";
+import { header } from "@/lib/content";
 
 interface Props {
 	class?: string;
 }
 
+const { navLinks, name } = header;
 const { class: className } = Astro.props;
 ---
 
@@ -18,13 +19,13 @@ const { class: className } = Astro.props;
 			<!-- Logo -->
 			<a href="#" class="flex items-center gap-2 font-bold text-lg md:text-xl">
 				<Logo />
-				<span class="hidden sm:inline">{siteConfig.name}</span>
+				<span class="hidden sm:inline">{name}</span>
 			</a>
 
 			<!-- Navigation Links -->
 			<nav class="hidden md:flex items-center gap-8">
 				{
-					header.navLinks.map((link) => (
+					navLinks.map((link) => (
 						<a
 							href={link.href}
 							class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -94,7 +95,7 @@ const { class: className } = Astro.props;
 		<nav id="mobile-menu" class="hidden overflow-hidden bg-background md:hidden">
 			<div class="border-t border-border px-2 pb-3 pt-2 space-y-1">
 				{
-					header.navLinks.map((link) => (
+					navLinks.map((link) => (
 						<a
 							href={link.href}
 							class="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
