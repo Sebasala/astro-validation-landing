@@ -46,18 +46,18 @@ const ogImageURL = new URL(image, baseURL);
 
 		<!-- No-index for Development (optional) -->
 		{import.meta.env.DEV && <meta name="robots" content="noindex, nofollow" />}
-	</head>
-	<body class="bg-background text-foreground">
-		<script>
-			// Dark mode toggle support
-			const html = document.documentElement;
+
+		<!-- Dark mode: inline script runs before first paint to avoid FOUC -->
+		<script is:inline>
 			const isDark =
 				localStorage.getItem("theme") === "dark" ||
 				(!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
 			if (isDark) {
-				html.classList.add("dark");
+				document.documentElement.classList.add("dark");
 			}
 		</script>
+	</head>
+	<body class="bg-background text-foreground">
 		<main>
 			<slot />
 		</main>
