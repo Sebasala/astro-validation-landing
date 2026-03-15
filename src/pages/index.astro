@@ -1,11 +1,26 @@
 ---
-import Button from '../components/starwind/button';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import CTA from "@/components/CTA.astro";
+import Description from "@/components/Description.astro";
+import FAQ from "@/components/FAQ.astro";
+import Features from "@/components/Features.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import Hero from "@/components/Hero.astro";
+import HowItWorks from "@/components/HowItWorks.astro";
+import Testimonials from "@/components/Testimonials.astro";
+import Layout from "@/layouts/Layout.astro";
+import { problem, solution } from "@/lib/content";
 ---
 
 <Layout>
-	<Button>Button</Button>
+	<Header />
+	<Hero />
+	<Description headline={problem.headline} description={problem.description} variant="primary" />
+	<Description headline={solution.headline} description={solution.description} variant="secondary" />
+	<Features />
+	<HowItWorks />
+	<Testimonials />
+	<CTA />
+	<FAQ />
+	<Footer />
 </Layout>

@@ -1,46 +1,174 @@
-# Astro Starter Kit: Basics
+# Astro Validation Landing
 
-```sh
-pnpm create astro@latest -- --template basics
+Astro Validation Landing is a conversion-focused landing page starter for validating product ideas quickly.
+It combines Astro, Tailwind CSS v4, and Starwind UI primitives into a modular page that is easy to customize.
+
+## What Is Included
+
+- A complete one-page validation flow: Header, Hero, Problem/Solution, Features, How It Works, Testimonials, CTA, FAQ, Footer.
+- Mobile-first responsive layout and dark mode support.
+- SEO-ready layout tags (title, description, canonical, Open Graph, Twitter card).
+- Centralized content configuration in a single file for fast copy updates.
+- Tailwind CSS v4 design tokens with CSS variables for light and dark themes.
+
+## Tech Stack
+
+- [Astro 5](https://astro.build/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [Starwind UI](https://starwind.dev/) component primitives
+- TypeScript (strict Astro config)
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm 10+
+
+### Install And Run
+
+```bash
+pnpm install
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Open the local URL shown in your terminal (Astro defaults to `http://localhost:4321`).
 
-## 🚀 Project Structure
+### Build And Preview
 
-Inside of your Astro project, you'll see the following folders and files:
+```bash
+pnpm build
+pnpm preview
+```
+
+## Available Scripts
+
+- `pnpm dev` - Start local dev server.
+- `pnpm build` - Build production output to `dist/`.
+- `pnpm preview` - Preview the production build locally.
+- `pnpm astro ...` - Run Astro CLI commands directly.
+
+## Project Structure
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+.
+|- public/
+|  |- favicon.ico
+|  |- launch.svg
+|- src/
+|  |- components/
+|  |  |- Header.astro
+|  |  |- Hero.astro
+|  |  |- Description.astro
+|  |  |- Features.astro
+|  |  |- HowItWorks.astro
+|  |  |- Testimonials.astro
+|  |  |- CTA.astro
+|  |  |- FAQ.astro
+|  |  |- Footer.astro
+|  |  |- starwind/
+|  |- layouts/
+|  |  |- Layout.astro
+|  |- lib/
+|  |  |- content.ts
+|  |- pages/
+|  |  |- index.astro
+|  |- styles/
+|  |  |- starwind.css
+|- astro.config.mjs
+|- starwind.config.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Customization Guide
 
-## 🧞 Commands
+### 1) Update Site Content
 
-All commands are run from the root of the project, from a terminal:
+Most page copy and links live in `src/lib/content.ts`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Update these exported objects to customize the landing page:
 
-## 👀 Want to learn more?
+- `siteConfig`: SEO title/description and Open Graph image path.
+- `header`: nav links and header CTA.
+- `hero`: headline, subheadline, primary/secondary CTA labels and links.
+- `problem` and `solution`: long-form narrative blocks.
+- `features`: section heading and feature cards.
+- `howItWorks`: three-step process content.
+- `testimonials`: quote cards.
+- `cta`: final conversion block copy and button label/link.
+- `faq`: accordion questions and answers.
+- `footer`: legal links, brand copy, and social URLs.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### 2) Update Theme And Design Tokens
+
+Edit `src/styles/starwind.css` to customize:
+
+- Light and dark color tokens (`:root` and `.dark`).
+- Radius scale (`--radius`, `--radius-*`).
+- Semantic variables used by components (`--primary`, `--muted`, etc.).
+
+Tailwind v4 is configured through Vite in `astro.config.mjs`.
+
+### 3) Replace Branding Assets
+
+- Replace the placeholder logo SVG in `src/components/Logo.astro`.
+- Replace favicon assets in `public/favicon.ico` and `public/launch.svg`.
+- Add your Open Graph image and point `siteConfig.image` to it (for example `public/og-image.png`).
+
+### 4) Wire The CTA To Your Email Tool
+
+`src/components/CTA.astro` currently renders an email input and a button, but no form submission handler.
+To collect emails, connect it to your provider (Mailchimp, ConvertKit, Brevo, Formspree, custom endpoint, etc.) by wrapping the input/button in a `<form>` and handling submit.
+
+## Section Anchor Map
+
+The page includes these section IDs for in-page navigation:
+
+- `#hero`
+- `#features`
+- `#how-it-works`
+- `#cta`
+- `#faq`
+- `#testimonials`
+
+Update header/footer links in `src/lib/content.ts` if you rename or reorder sections.
+
+## Deployment Notes
+
+This project builds to static assets and can be deployed to any static host (Netlify, Vercel static output, Cloudflare Pages, GitHub Pages, etc.).
+
+Before deploying:
+
+1. Set your production site URL in `astro.config.mjs` using Astro's `site` option.
+2. Replace placeholder logos/icons and social links.
+3. Wire up your email capture flow in the CTA section.
+4. Ensure legal links in the footer point to real pages.
+
+## Credits And Licenses
+
+### Placeholder Logo Icon
+
+The placeholder logo icon used in this theme for the favicon and `Logo` component is:
+
+- Icon Name: Launch SVG Vector
+- By: Shannon E. Thomas
+- Source: [Launch Vector SVG Icon (13) - SVG Repo](https://www.svgrepo.com/svg/412417/launch)
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+Please replace this icon with your own brand logo before production use.
+
+### Social Media Icons
+
+The social media icons included in this theme are sourced from svgrepo.com and are licensed under Creative Commons Attribution (CC BY). If you keep these icons, maintain attribution.
+
+- Twitter SVG Vector
+  - By: Konstantin Filatov
+  - Source: [Twitter Icon - SVG Repo](https://www.svgrepo.com/svg/521900/twitter)
+  - License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- GitHub SVG Vector
+  - By: Konstantin Filatov
+  - Source: [GitHub Icon - SVG Repo](https://www.svgrepo.com/svg/521688/github)
+  - License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- LinkedIn SVG Vector
+  - By: Konstantin Filatov
+  - Source: [LinkedIn Icon - SVG Repo](https://www.svgrepo.com/svg/521725/linkedin)
+  - License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
