@@ -39,10 +39,6 @@ const ogImageURL = Astro.site ? new URL(image, Astro.site) : new URL(image, "htt
 		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 		<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
 
-		<!-- Preconnect to External Resources -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
 		<!-- No-index for Development (optional) -->
 		{import.meta.env.DEV && <meta name="robots" content="noindex, nofollow" />}
 	</head>
