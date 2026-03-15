@@ -248,7 +248,19 @@ const { type = "single", defaultValue, class: className, ...rest } = Astro.props
     });
   };
 
+  // Initialize accordions for any instances currently in the DOM
   setupAccordions();
-  document.addEventListener("astro:after-swap", setupAccordions);
-  document.addEventListener("starwind:init", setupAccordions);
+
+  // Attach document-level listeners only once per page
+  if (typeof window !== "undefined") {
+    const globalWindow = window as typeof window & {
+      __starwindAccordionListenersAttached?: boolean;
+    };
+
+    if (!globalWindow.__starwindAccordionListenersAttached) {
+      document.addEventListener("astro:after-swap", setupAccordions);
+      document.addEventListener("starwind:init", setupAccordions);
+      globalWindow.__starwindAccordionListenersAttached = true;
+    }
+  }
 </script>
