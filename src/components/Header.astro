@@ -40,6 +40,8 @@ const { class: className } = Astro.props;
 				id="mobile-menu-btn"
 				class="inline-flex md:hidden items-center justify-center rounded-md p-2 text-foreground hover:bg-muted"
 				aria-label="Toggle menu"
+				aria-controls="mobile-menu"
+				aria-expanded="false"
 			>
 				<svg
 					class="h-6 w-6"
@@ -64,6 +66,29 @@ const { class: className } = Astro.props;
 				</Button>
 			</div>
 		</div>
+
+		<script>
+			if (typeof window !== "undefined") {
+				window.addEventListener("DOMContentLoaded", () => {
+					const toggleButton = document.getElementById("mobile-menu-btn");
+					const menu = document.getElementById("mobile-menu");
+
+					if (!toggleButton) return;
+
+					toggleButton.addEventListener("click", () => {
+						const currentlyExpanded =
+							toggleButton.getAttribute("aria-expanded") === "true";
+						const nextExpanded = !currentlyExpanded;
+
+						toggleButton.setAttribute("aria-expanded", String(nextExpanded));
+
+						if (menu) {
+							menu.setAttribute("aria-hidden", String(!nextExpanded));
+						}
+					});
+				});
+			}
+		</script>
 
 		<!-- Mobile Menu -->
 		<nav id="mobile-menu" class="hidden overflow-hidden bg-background md:hidden">
