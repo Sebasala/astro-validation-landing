@@ -2,5 +2,12 @@
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
-  "cSpell.words": ["Filatov", "Konstantin", "subheadline", "svgrepo", "tabler"]
+  "cSpell.words": [
+    "Filatov",
+    "Konstantin",
+    "lucide",
+    "subheadline",
+    "svgrepo",
+    "tabler"
+  ]
 }

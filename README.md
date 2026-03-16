@@ -142,33 +142,3 @@ Before deploying:
 2. Replace placeholder logos/icons and social links.
 3. Wire up your email capture flow in the CTA section.
 4. Ensure legal links in the footer point to real pages.
-
-## Credits And Licenses
-
-### Placeholder Logo Icon
-
-The placeholder logo icon used in this theme for the favicon and `Logo` component is:
-
-- Icon Name: Launch SVG Vector
-- By: Shannon E. Thomas
-- Source: [Launch Vector SVG Icon (13) - SVG Repo](https://www.svgrepo.com/svg/412417/launch)
-- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-
-Please replace this icon with your own brand logo before production use.
-
-### Social Media Icons
-
-The social media icons included in this theme are sourced from svgrepo.com and are licensed under Creative Commons Attribution (CC BY). If you keep these icons, maintain attribution.
-
-- Twitter SVG Vector
-  - By: Konstantin Filatov
-  - Source: [Twitter Icon - SVG Repo](https://www.svgrepo.com/svg/521900/twitter)
-  - License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- GitHub SVG Vector
-  - By: Konstantin Filatov
-  - Source: [GitHub Icon - SVG Repo](https://www.svgrepo.com/svg/521688/github)
-  - License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- LinkedIn SVG Vector
-  - By: Konstantin Filatov
-  - Source: [LinkedIn Icon - SVG Repo](https://www.svgrepo.com/svg/521725/linkedin)
-  - License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
