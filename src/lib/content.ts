@@ -25,7 +25,8 @@ export const header = {
   name: siteConfig.name,
   navLinks: siteConfig.quickLinks,
   cta: {
-    label: "Get Early Access"
+    label: "Get Early Access",
+    href: "#cta"
   }
 };
 
