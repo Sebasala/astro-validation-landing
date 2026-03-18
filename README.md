@@ -23,7 +23,7 @@ This starter provides a solid foundation to create a compelling landing page wit
 
 ## Tech Stack
 
-- [Astro 5](https://astro.build/)
+- [Astro 6](https://astro.build/)
 - [Tailwind CSS v4](https://tailwindcss.com/)
 - [Starwind UI](https://starwind.dev/) component primitives
 - TypeScript (strict Astro config)
@@ -35,7 +35,7 @@ This starter provides a solid foundation to create a compelling landing page wit
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js +22.12.0
 - pnpm 10+
 
 ### Install And Run
