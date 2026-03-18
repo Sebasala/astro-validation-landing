@@ -1,7 +1,17 @@
 # Astro Validation Landing
 
+[![GitHub stars](https://img.shields.io/github/stars/Sebasala/astro-validation-landing?style=social)](https://github.com/Sebasala/astro-validation-landing)
+
 Astro Validation Landing is a conversion-focused landing page starter for validating product ideas quickly.
 It combines Astro, Tailwind CSS v4, and Starwind UI primitives into a modular page that is easy to customize.
+
+![Astro Validation Landing Screenshot](image.png)
+
+## Why
+
+When launching a new product, validating your idea with real users before investing in development is crucial.
+A well-designed landing page can help you collect emails, gauge interest, and get feedback on your concept.
+This starter provides a solid foundation to create a compelling landing page without starting from scratch.
 
 ## What Is Included
 
@@ -19,6 +29,9 @@ It combines Astro, Tailwind CSS v4, and Starwind UI primitives into a modular pa
 - TypeScript (strict Astro config)
 
 ## Quick Start
+
+[![View Live Demo](https://img.shields.io/badge/View-Live_Demo-blue)](https://astro-validation-landing.netlify.app/)
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Sebasala/astro-validation-landing)
 
 ### Prerequisites
 
@@ -114,7 +127,23 @@ Tailwind v4 is configured through Vite in `astro.config.mjs`.
 - Replace favicon assets in `public/favicon.ico` and `public/launch.svg`.
 - Add your Open Graph image and point `siteConfig.image` to it (for example `public/og-image.png`).
 
-### 4) Wire The CTA To Your Email Tool
+### 4) Built-in Lead Capture with Netlify Forms
+
+Validating an idea requires collecting emails. We've made this incredibly easy using Netlify Forms. No external services, no API keys, and no backend code required.
+How to use it:
+In your CTA.astro component, add the data-netlify="true" attribute to your <form> element.
+
+```Html
+<form name="newsletter" method="POST" data-netlify="true">
+  <input type="email" name="email" placeholder="Enter your email" required />
+  <button type="submit">Get Early Access</button>
+</form>
+```
+
+That's it. When you deploy to Netlify, they will automatically detect the form. You will see all your email signups directly in your Netlify Dashboard under the "Forms" tab.
+Note: If you prefer to use an external service like Mailchimp or ConvertKit later, you can simply remove the data-netlify attribute and point the form action to your service provider's URL.
+
+### 5) Wire The CTA To Your Email Tool
 
 `src/components/CTA.astro` currently renders an email input and a button, but no form submission handler.
 To collect emails, connect it to your provider (Mailchimp, ConvertKit, Brevo, Formspree, custom endpoint, etc.) by wrapping the input/button in a `<form>` and handling submit.
