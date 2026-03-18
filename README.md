@@ -145,8 +145,8 @@ Note: If you prefer to use an external service like Mailchimp or ConvertKit late
 
 ### 5) Wire The CTA To Your Email Tool
 
-`src/components/CTA.astro` currently renders an email input and a button, but no form submission handler.
-To collect emails, connect it to your provider (Mailchimp, ConvertKit, Brevo, Formspree, custom endpoint, etc.) by wrapping the input/button in a `<form>` and handling submit.
+`src/components/CTA.astro` currently renders a form to capture leads directly in Netlify.
+To collect data on other platforms or services you can connect the form to your own provider (Mailchimp, ConvertKit, Brevo, Formspree, custom endpoint, etc.) and handling submit.
 
 ## Section Anchor Map
 
