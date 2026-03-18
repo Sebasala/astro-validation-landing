@@ -131,7 +131,7 @@ Tailwind v4 is configured through Vite in `astro.config.mjs`.
 
 Validating an idea requires collecting emails. We've made this incredibly easy using Netlify Forms. No external services, no API keys, and no backend code required.
 How to use it:
-In your CTA.astro component, add the data-netlify="true" attribute to your <form> element.
+In your CTA.astro component, add the data-netlify="true" attribute to your form element.
 
 ```Html
 <form name="newsletter" method="POST" data-netlify="true">

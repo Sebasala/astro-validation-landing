@@ -23,17 +23,25 @@ const { headline, description, button, disclaimer } = cta;
 			</p>
 
 			<!-- Email Signup Form or CTA Button -->
-			<div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
+			<form 
+				name="contact"	
+				method="POST"
+				data-netlify="true" 
+				class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto"
+			>
+				<input type="hidden" name="form-name" value="contact" />
 				<input
 					type="email"
+					name="email"
 					placeholder="your@email.com"
 					class="flex-1 w-full px-4 py-3 rounded-md border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
 					aria-label="Email address"
+					required
 				/>
-				<Button variant="primary" size="lg" href={button.href} class="whitespace-nowrap">
+				<Button type="submit" variant="primary" size="lg" href={button.href} class="whitespace-nowrap">
 					{button.label}
 				</Button>
-			</div>
+			</form>
 
 			<!-- Additional Info -->
 			<p class="text-sm text-muted-foreground mt-6">
