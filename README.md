@@ -1,4 +1,5 @@
 # Astro Validation Landing
+[![Astro Themes](https://img.shields.io/badge/Featured_on-Astro_Themes-orange?logo=astro&logoColor=white)](https://astro.build/themes/details/astro-validation-landing/)
 
 [![GitHub stars](https://img.shields.io/github/stars/Sebasala/astro-validation-landing?style=social)](https://github.com/Sebasala/astro-validation-landing)
 
