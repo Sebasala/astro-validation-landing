@@ -1,4 +1,5 @@
 # Astro Validation Landing
+
 [![Astro Themes](https://img.shields.io/badge/Featured_on-Astro_Themes-orange?logo=astro&logoColor=white)](https://astro.build/themes/details/astro-validation-landing/)
 
 [![GitHub stars](https://img.shields.io/github/stars/Sebasala/astro-validation-landing?style=social)](https://github.com/Sebasala/astro-validation-landing)
@@ -81,10 +82,10 @@ pnpm preview
 |  |  |- FAQ.astro
 |  |  |- Footer.astro
 |  |  |- starwind/
+|  |- content/
+|  |  |- content.ts
 |  |- layouts/
 |  |  |- Layout.astro
-|  |- lib/
-|  |  |- content.ts
 |  |- pages/
 |  |  |- index.astro
 |  |- styles/
@@ -97,7 +98,7 @@ pnpm preview
 
 ### 1) Update Site Content
 
-Most page copy and links live in `src/lib/content.ts`.
+Most page copy and links live in `src/content/content.ts`.
 
 Update these exported objects to customize the landing page:
 
@@ -160,7 +161,7 @@ The page includes these section IDs for in-page navigation:
 - `#faq`
 - `#testimonials`
 
-Update header/footer links in `src/lib/content.ts` if you rename or reorder sections.
+Update header/footer links in `src/content/content.ts` if you rename or reorder sections.
 
 ## Deployment Notes
 
